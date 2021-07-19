@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<configuration>
+    <property>
+        <name>hive.metastore.db.type</name>
+        <value>derby</value>
+        <description>Types of  user`s database to metastore </description>
+    </property>
+
+    <property>
+        <name>hive.metastore.warehouse.dir</name>
+        <value>/user/hive/warehouse</value>
+        <description>Location of default database for the warehouse </description>
+    </property>
+
+    <property>
+        <name>hive.server2.thrift.bind.host</name>
+        <value>hadoop1</value>
+    </property>
+
+    <property>
+        <name>hive.server2.thrift.port</name>
+        <value>10000</value>
+    </property>
+
+
+</configuration>

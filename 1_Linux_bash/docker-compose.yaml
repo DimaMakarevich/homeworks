@@ -1,0 +1,69 @@
+version: "3.9"
+
+services:
+    mysql_db:
+        container_name: mysql_db
+        restart: always
+        image: mysql:8.0.23
+        ports:
+            - "3310:3306"
+        environment:
+            - MYSQL_ALLOW_EMPTY_PASSWORD=true
+        healthcheck:
+            test: "mysql --user=root --execute \"SHOW DATABASES;\""
+            interval: 10s
+            timeout: 10s
+            retries: 5
+            start_period: 20s
+
+    mongo_db:
+        container_name: mongo_db
+        restart: unless-stopped
+        image: "mongo:4.0.8"
+        ports:
+            - "27017:27017"
+        environment:
+            - "MONGODB_DATA_DIR=/data/mongodb"
+        healthcheck:
+            test: echo 'db.runCommand("ping").ok'
+            interval: 10s
+            timeout: 10s
+            retries: 5
+            start_period: 20s
+    centos:
+        container_name: centos
+        restart: on-failure
+        tty: true
+        depends_on:
+            mysql_db:
+                  condition: service_healthy
+            mongo_db:
+                  condition: service_healthy
+        links:
+            - mysql_db
+            - mongo_db
+        build:
+            context: ../
+            dockerfile: 1_Linux_bash/CentOS/Dockerfile
+        volumes:
+            - ./scripts/create_db_user:/scripts/create_db_user
+        command: bash /scripts/create_db_user
+
+    ubuntu:
+        container_name: ubuntu
+        restart: on-failure
+        tty: true
+        depends_on:
+            mysql_db:
+                  condition: service_healthy
+            mongo_db:
+                  condition: service_healthy
+        links:
+        - mysql_db
+        - mongo_db
+        build:
+            context: ../
+            dockerfile: 1_Linux_bash/Ubuntu/Dockerfile
+        volumes:
+            - ./scripts/create_db_user:/scripts/create_db_user
+        command: bash /scripts/create_db_user

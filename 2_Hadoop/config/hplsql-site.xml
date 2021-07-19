@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<configuration>
+<property>
+    <name>hplsql.conn.default</name>
+    <value>hive2conn</value>
+    <description>The default connection profile</description>
+</property>
+<property>
+    <name>hplsql.conn.hiveconn</name>
+    <value>org.apache.hive.jdbc.HiveDriver;jdbc:hive2://</value>
+    <description>HiveServer2 JDBC connection (embedded mode)</description>
+</property>
+<property>
+    <name>hplsql.conn.init.hiveconn</name>
+    <value>
+        set hive.execution.engine=mr;
+        use default;
+    </value>
+    <description>Statements for execute after connection to the database</description>
+</property>
+</configuration>

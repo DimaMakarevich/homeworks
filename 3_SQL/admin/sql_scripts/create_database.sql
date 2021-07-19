@@ -1,0 +1,2 @@
+DROP DATABASE IF EXISTS forex_db;
+CREATE DATABASE forex_db;
