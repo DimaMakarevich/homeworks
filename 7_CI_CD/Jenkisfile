@@ -14,7 +14,7 @@ pipeline {
     stages {
         stage("First step") {
             steps {
-                sh 'echo \'Hello World Jenkins\''
+                bat 'echo \'Hello World Jenkins\''
             }
         }
 
