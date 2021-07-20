@@ -14,7 +14,16 @@ pipeline {
     stages {
         stage("First step") {
             steps {
-                sh'echo \'Hello World Jenkins\''
+                bat'echo \'Hello World Jenkins\''
+            }
+        }
+
+        stage("Compile jar file") {
+            steps {
+                bat 'ls'
+                bat 'cd 6_Java'
+                bat 'ls'
+                bat 'mvn clean install'
             }
         }
 
