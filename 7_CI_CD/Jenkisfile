@@ -25,8 +25,18 @@ pipeline {
                     withMaven {
                         bat 'C:\\"Program Files (x86)"\\apache-maven\\bin\\mvn clean install'
                     }
+                }
+            }
+        }
 
-
+        stage("Run program") {
+            steps {
+                bat 'dir'
+                dir("6_Java") {
+                    bat 'dir'
+                    withMaven {
+                        bat 'java -jar 6_Java-1.0-SNAPSHOT.jar'
+                    }
                 }
 
             }
