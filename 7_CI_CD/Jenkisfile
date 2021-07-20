@@ -21,7 +21,7 @@ pipeline {
         stage("Compile jar file") {
             steps {
                 bat 'dir'
-                bat 'cd 6_Java'
+                cd 6_Java
                 bat 'dir'
                 bat 'mvn clean install'
             }
