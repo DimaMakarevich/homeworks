@@ -13,7 +13,7 @@ pipeline {
     stages {
         stage("First step") {
             steps {
-                bat'echo \'Hello World Jenkins\''
+                bat 'echo \'Hello World Jenkins\''
             }
         }
 
@@ -22,7 +22,11 @@ pipeline {
                 bat 'dir'
                 dir("6_Java") {
                     bat 'dir'
-                    bat 'mvn clean install'
+                    withMaven {
+                        bat 'mvn clean install'
+                    }
+
+
                 }
 
             }
