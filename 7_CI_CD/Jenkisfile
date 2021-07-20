@@ -32,7 +32,7 @@ pipeline {
         stage("Run program") {
             steps {
                 bat 'dir'
-                dir("6_Java") {
+                dir("6_Java\\target") {
                     bat 'dir'
                     withMaven {
                         bat 'java -jar 6_Java-1.0-SNAPSHOT.jar'
