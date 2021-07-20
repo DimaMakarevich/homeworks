@@ -22,8 +22,7 @@ pipeline {
                 bat 'dir'
                 dir("6_Java") {
                     bat 'dir'
-                    withMaven {
-                        jdk: 'C:\\"Program Files"\\Java\\jdk1.8.0_291'
+                    withMaven(jdk: 'C:\\"Program Files"\\Java\\jdk1.8.0_291') {
                         bat 'C:\\"Program Files (x86)"\\apache-maven\\bin\\mvn clean install'
                     }
 
