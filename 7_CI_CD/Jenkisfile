@@ -2,7 +2,6 @@
 
 properties([disableConcurrentBuilds()])
 
-
 pipeline {
     agent {
         label 'master'
@@ -21,7 +20,11 @@ pipeline {
         stage("Compile jar file") {
             steps {
                 bat 'dir'
-                bat '6_Java/mvn clean install'
+                dir("6_Java") {
+                    bat 'dir'
+                    bat 'mvn clean install'
+                }
+
             }
         }
 
