@@ -23,7 +23,7 @@ pipeline {
                 dir("6_Java") {
                     bat 'dir'
                     withMaven {
-                        bat 'C:\\Program Files (x86)\\apache-maven\\bin\\mvn clean install'
+                        bat 'C:\\"Program Files (x86)"\\apache-maven\\bin\\mvn clean install'
                     }
 
 
