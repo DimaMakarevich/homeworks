@@ -37,11 +37,21 @@ pipeline {
             }
         }
 
-        stage("Run docker") {
+        stage("Build docker") {
             steps {
-                bat "docker images"
+                dir("7_CI_CD") {
+                    bat "docker-compose build"
+                }
+
             }
         }
+
+        stage("Push images") {
+            steps {
+                bat "echo 2444"
+            }
+        }
+
 
     }
 }
