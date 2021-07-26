@@ -1,4 +1,3 @@
-import java.util.ArrayList;
 import java.util.HashMap;
 
 public class Main {
@@ -16,7 +15,7 @@ public class Main {
             ResultPrinter.printResult(MysqlConnector.getDestinationTable());
         } else {
             long start = System.currentTimeMillis();
-            ResultPrinter.printResult(DataProcessing.calculate(Loader.loadData(Config.data_path), arguments.get("cm")));
+            ResultPrinter.printResult(DataProcessor.calculate(Loader.loadData(Config.data_path), arguments.get("cm")));
             long finish = System.currentTimeMillis();
             long duration = finish - start;
             System.out.println("Duration: " + duration / 1000);

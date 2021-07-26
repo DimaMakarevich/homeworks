@@ -6,7 +6,7 @@ Calculate monthly growth_rate
 3. You have to check your `Xmx` java variable value and if less than 2500mb add to each program run 
     `-Xmx2500mb` parameter, for example `java -Xmx2500mb 6_Java-1.0-SNAPSHOT.jar`. 
    This command help you to check your Xmx variable value `java -XX:+PrintFlagsFinal -version | grep -iE 'HeapSize|PermSize|ThreadStackSize'`
-4. And run `java 6_Java-1.0-SNAPSHOT.jar -sdb`.  Flag `-sdb`  indicates that it will create databases with empty tables.
+4. And run `java -jar 6_Java-1.0-SNAPSHOT.jar -sdb`.  Flag `-sdb`  indicates that it will create databases with empty tables.
 
 arguments:  
 
@@ -21,10 +21,10 @@ Options                | Description
 *Default arguments calculation_mode="oc", load_mode = "incr"*
 
 #### Run Examples
-`java 6_Java-1.0-SNAPSHOT.jar`   
-`java 6_Java-1.0-SNAPSHOT.jar -cm oc`  
-`java 6_Java-1.0-SNAPSHOT.jar -cm cc -lm full`  
-`java 6_Java-1.0-SNAPSHOT.jar -gr`  
+`java -jar 6_Java-1.0-SNAPSHOT.jar`   
+`java -jar 6_Java-1.0-SNAPSHOT.jar -cm oc`  
+`java -jar 6_Java-1.0-SNAPSHOT.jar -cm cc -lm full`  
+`java -jar 6_Java-1.0-SNAPSHOT.jar -gr`  
 
 result:  
 ![results](screenshots/java_results.jpg)

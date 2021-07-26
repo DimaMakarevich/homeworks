@@ -1,7 +1,5 @@
 import java.io.File;
-import java.io.FileFilter;
 import java.io.FileReader;
-import java.io.FilenameFilter;
 import java.text.SimpleDateFormat;
 import java.util.*;
 import java.util.regex.Matcher;
@@ -70,7 +68,7 @@ public class Loader {
                         , startTimestamp);
                 MysqlConnector.runQuery(updateAuditTable);
             }
-            resultData.addAll(DataProcessing.getOpenCloseMonthValue(DataProcessing.groupByYearAndMonth(csvArrayList)));
+            resultData.addAll(DataProcessor.getOpenCloseMonthValue(DataProcessor.groupByYearAndMonth(csvArrayList)));
             csvArrayList = null; // trick help to economy memory and time
             System.gc();
         }
