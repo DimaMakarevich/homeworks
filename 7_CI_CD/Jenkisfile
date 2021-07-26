@@ -48,10 +48,12 @@ pipeline {
 
         stage("Push images") {
             steps {
-                bat "echo 2444"
+                bat "docker login -u pampastu -p Dima1790426"
+                bat "docker image tag mysql:8.0.23 pampastu/mysql:1.0"
+                bat "docker image tag 7_ci_cd_ubuntu pampastu/ci_cd_ubuntu:1.0"
+                bat "docker push pampastu/mysql:1.0"
+                bat "docker push pampastu/ci_cd_ubuntu:1.0"
             }
         }
-
-
     }
 }
