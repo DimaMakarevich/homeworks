@@ -6,5 +6,5 @@ public class Config {
     // public static String password = "Dima1790426";
     public static String password = "";
    // public static String data_path = "C:\\Users\\DmitryMakarevich\\Desktop\\homeworks\\6_Java\\fund";
-   public static String data_path = "6_Java/fund";
+   public static String data_path = "/homeworks/6_Java/fund";
 }
