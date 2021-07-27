@@ -1,6 +1,10 @@
 ## Seventh homework CI_CD
 Calculate monthly growth_rate
 
+1. build images with jenkins
+2. push images to docker hub
+3. deploy images in aws EC2
+
 
 `docker compose up -d` 
 

@@ -21,7 +21,7 @@ ENV PATH=/usr/local/sbin:/usr/local/bin:/bin:/sbin:/usr/sbin:/usr/bin:
 	
 WORKDIR /homeworks
 COPY . .
-COPY 6_Java/target/6_Java-1.0-SNAPSHOT-jar-with-dependencies.jar 7_CI_CD/java
+COPY 6_Java/target/6_Java-1.0-SNAPSHOT-jar-with-dependencies.jar 7_CI_CD/java/
 
 RUN apt-get install mysql-client --yes --quiet
 

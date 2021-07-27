@@ -33,7 +33,7 @@ pipeline {
                 bat 'dir'
                 dir("6_Java\\target") {
                    // bat 'java -jar 6_Java-1.0-SNAPSHOT.jar -sdb'
-                    bat 'echo RunOk'
+                    bat 'dir'
                 }
             }
         }
@@ -41,7 +41,7 @@ pipeline {
         stage("Build docker") {
             steps {
                 dir("7_CI_CD") {
-                    bat "docker-compose build"
+                    bat "docker-compose -f docker-compose.yaml build"
                 }
 
             }
@@ -56,5 +56,17 @@ pipeline {
                 bat "docker push pampastu/ci_cd_ubuntu:1.0"
             }
         }
+
+
+        stage("Pull images") {
+            steps {
+                //  bat "docker pull pampastu/ci_cd_ubuntu:1.0"
+                //  bat "docker pull pampastu/mysql"
+                //  bat "docker run -e MYSQL_ALLOW_EMPTY_PASSWORD=true -d -p 3310:3306 pampastu/mysql:1.0 "
+                // bat "docker run "
+               // bat "docker push pampastu/ci_cd_ubuntu:1.0"
+            }
+        }
+
     }
 }

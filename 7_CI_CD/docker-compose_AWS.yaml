@@ -1,0 +1,31 @@
+version: "3.9"
+
+services:
+  mysql_db:
+    container_name: mysql_db
+    restart: always
+    image: pampastu/mysql:1.0
+    ports:
+      - "3310:3306"
+    environment:
+      - MYSQL_ALLOW_EMPTY_PASSWORD=true
+    healthcheck:
+      test: "mysql --user=root --execute \"SHOW DATABASES;\""
+      interval: 10s
+      timeout: 10s
+      retries: 5
+      start_period: 20s
+
+  ubuntu:
+    container_name: ubuntu
+    restart: on-failure
+    image: pampastu/ci_cd_ubuntu:1.0
+    tty: true
+    depends_on:
+      mysql_db:
+        condition: service_healthy
+    links:
+      - mysql_db
+    #volumes:
+    #  - ./scripts/create_db_user.sh:/scripts/create_db_user.sh
+    #command: sh -c /scripts/create_db_user.sh
