@@ -5,6 +5,7 @@ public class Main {
         ArgumentParser parser = new ArgumentParser();
         String[] args2 = new String[]{"-sdb"};
         HashMap<String, String> arguments = parser.parse(args);
+        MysqlConnector.db_setup();
         if (arguments.get("sdb").equals("true")) {
             MysqlConnector.db_setup();
         }

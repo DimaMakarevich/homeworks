@@ -1,8 +1,8 @@
 Config.class
 Main.class
+DataProcessor.class
 ArgumentParser.class
 MysqlConnector.class
-DataProcessing.class
 Loader.class
 Checksum.class
 ResultPrinter.class

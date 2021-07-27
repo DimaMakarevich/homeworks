@@ -27,7 +27,7 @@ parse_arguments() {
       run_service "all"
       ;;
     *)
-      prinf "Wrong argument: %s\n" "${arg}"
+      echo "Wrong argument: %s\n" "${arg}"
       exit 1
    esac
  else
