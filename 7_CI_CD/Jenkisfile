@@ -60,6 +60,7 @@ pipeline {
 
         stage("Pull images") {
             steps {
+                bat 'dir'
                 //  bat "docker pull pampastu/ci_cd_ubuntu:1.0"
                 //  bat "docker pull pampastu/mysql"
                 //  bat "docker run -e MYSQL_ALLOW_EMPTY_PASSWORD=true -d -p 3310:3306 pampastu/mysql:1.0 "
