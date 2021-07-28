@@ -62,7 +62,7 @@ pipeline {
 
         stage("Deploy in AWS") {
             steps {
-
+                bat "python --version"
                 bat "C:\\Users\\DmitryMakarevich\\AppData\\Local\\Programs\\Python\\Python38\\Scripts\\aws ssm send-command " +
                         " --instance-ids i-00e70299431fe89e8" +
                         " --document-name 'AWS-RunShellScript'" +
