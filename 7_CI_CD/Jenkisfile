@@ -73,7 +73,7 @@ pipeline {
         stage("Deploy in AWS") {
             steps {
               //  bat "python --version"
-                bat "ftype Python=\"C:\\Users\\DmitryMakarevich\\AppData\\Local\\Programs\\Python\\Python38\\python.exe %1 %*\""
+                bat "ftype Python.File=\"C:\\Users\\DmitryMakarevich\\AppData\\Local\\Programs\\Python\\Python38\\python.exe %1 %*\""
               //  bat "python --version"
                 bat "C:\\Users\\DmitryMakarevich\\AppData\\Local\\Programs\\Python\\Python38\\Scripts\\aws ssm send-command " +
                         " --instance-ids i-00e70299431fe89e8" +
