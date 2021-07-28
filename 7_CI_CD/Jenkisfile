@@ -72,7 +72,7 @@ pipeline {
 
         stage("Deploy in AWS") {
             steps {
-                bat "python --version"
+              //  bat "python --version"
                 bat "ftype Python=\"C:\\Users\\DmitryMakarevich\\AppData\\Local\\Programs\\Python\\Python38\\python.exe %1 %*\""
                 bat "python --version"
                 bat "C:\\Users\\DmitryMakarevich\\AppData\\Local\\Programs\\Python\\Python38\\Scripts\\aws ssm send-command " +
@@ -86,9 +86,7 @@ pipeline {
                         " docker rmi -f \$(docker images -q)," +
                         " docker-compose -f /homeworks/7_CI_CD/docker-compose_AWS.yaml' up -d," +
                         " docker exec ubuntu java -jar '7_CI_CD/java/6_Java-1.0-SNAPSHOT-jar-with-dependencies.jar' -sdb"
-
             }
         }
-
     }
 }
