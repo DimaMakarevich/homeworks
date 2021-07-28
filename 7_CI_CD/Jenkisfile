@@ -80,14 +80,14 @@ pipeline {
                          --instance-ids i-00e70299431fe89e8 \
                          --document-name 'AWS-RunShellScript' \
                          --region eu-central-1 \
-                         --parameters commands=[
+                         --parameters 'commands=[
                             "sudo service docker start", 
                             "rm -rf /home/ec2-user/homeworks",
                             "git clone git@bitbucket.org:MakarevichDmitry/homeworks.git /home/ec2-user/homeworks", 
                             "docker rm -f \$(docker ps -a -q)", 
                             "docker rmi -f \$(docker images -q)", 
                             "docker-compose -f /homeworks/7_CI_CD/docker-compose_AWS.yaml up -d", 
-                            "docker exec ubuntu java -jar 7_CI_CD/java/6_Java-1.0-SNAPSHOT-jar-with-dependencies.jar -sdb"]
+                            "docker exec ubuntu java -jar 7_CI_CD/java/6_Java-1.0-SNAPSHOT-jar-with-dependencies.jar -sdb"]'
                     """
             }
         }
