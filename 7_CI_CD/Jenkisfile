@@ -10,9 +10,18 @@ pipeline {
         buildDiscarder(logRotator(numToKeepStr: '10', artifactNumToKeepStr: '10'))
         timestamps()
     }
+
+    environment {
+        python = "C:\\Users\\DmitryMakarevich\\AppData\\Local\\Programs\\Python\\Python38\\python"
+        Python.File = "C:\\Windows\\py.exe" "%L" '%*'
+        py = "C:\\Windows\\py.exe"
+    }
+
     stages {
         stage("First step") {
             steps {
+                bat "echo ${python}"
+                bat "echo ${py}"
                 bat 'echo \'Hello World Jenkins\''
             }
         }
@@ -62,7 +71,7 @@ pipeline {
 
         stage("Deploy in AWS") {
             steps {
-               // bat "python --version"
+                // bat "python --version"
                 bat "C:\\Users\\DmitryMakarevich\\AppData\\Local\\Programs\\Python\\Python38\\Scripts\\aws ssm send-command " +
                         " --instance-ids i-00e70299431fe89e8" +
                         " --document-name 'AWS-RunShellScript'" +
