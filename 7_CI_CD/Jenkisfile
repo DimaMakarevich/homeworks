@@ -15,7 +15,7 @@ pipeline {
         python = "C:\\Users\\DmitryMakarevich\\AppData\\Local\\Programs\\Python\\Python38\\python"
         //Python = "C:\\Windows\\py.exe"
         py = "C:\\Windows\\py.exe"
-        ftype Python="C:\\Users\\DmitryMakarevich\\AppData\\Local\\Programs\\Python\\Python38\\python.exe %1 %*"
+
     }
 
     stages {
@@ -72,7 +72,9 @@ pipeline {
 
         stage("Deploy in AWS") {
             steps {
-                // bat "python --version"
+                bat "python --version"
+                bat "ftype Python=\"C:\\Users\\DmitryMakarevich\\AppData\\Local\\Programs\\Python\\Python38\\python.exe %1 %*\""
+                bat "python --version"
                 bat "C:\\Users\\DmitryMakarevich\\AppData\\Local\\Programs\\Python\\Python38\\Scripts\\aws ssm send-command " +
                         " --instance-ids i-00e70299431fe89e8" +
                         " --document-name 'AWS-RunShellScript'" +
