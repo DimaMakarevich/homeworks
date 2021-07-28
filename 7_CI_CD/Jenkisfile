@@ -15,6 +15,7 @@ pipeline {
         python = "C:\\Users\\DmitryMakarevich\\AppData\\Local\\Programs\\Python\\Python38\\python"
         //Python = "C:\\Windows\\py.exe"
         py = "C:\\Windows\\py.exe"
+        ftype Python="C:\\Users\\DmitryMakarevich\\AppData\\Local\\Programs\\Python\\Python38\\python.exe %1 %*"
     }
 
     stages {
