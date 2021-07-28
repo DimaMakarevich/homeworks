@@ -13,7 +13,7 @@ pipeline {
 
     environment {
         python = "C:\\Users\\DmitryMakarevich\\AppData\\Local\\Programs\\Python\\Python38\\python"
-        Python.File = "C:\\Windows\\py.exe"
+        Python = "C:\\Windows\\py.exe"
         py = "C:\\Windows\\py.exe"
     }
 
