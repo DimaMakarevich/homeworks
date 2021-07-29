@@ -12,17 +12,17 @@ pipeline {
     }
 
     environment {
-        python = "C:\\Users\\DmitryMakarevich\\AppData\\Local\\Programs\\Python\\Python38\\python"
-        Python = "C:\\Windows\\py.exe"
-        py = "C:\\Windows\\py.exe"
+       // python = "C:\\Users\\DmitryMakarevich\\AppData\\Local\\Programs\\Python\\Python38\\python"
+       // Python = "C:\\Windows\\py.exe"
+       // py = "C:\\Windows\\py.exe"
 
     }
 
     stages {
         stage("First step") {
             steps {
-                bat "echo ${python}"
-                bat "echo ${py}"
+                //bat "echo ${python}"
+               // bat "echo ${py}"
                 bat 'echo \'Hello World Jenkins\''
             }
         }
