@@ -80,8 +80,7 @@ pipeline {
                          --instance-ids i-00e70299431fe89e8 ^
                          --document-name \"AWS-RunShellScript\" ^
                          --region eu-central-1 ^
-                         --parameters commands=[
-                            \"sudo service docker start\", 
+                         --parameters commands=[\"sudo service docker start\",
                             \"rm -rf /home/ec2-user/homeworks\",
                             \"git clone git@bitbucket.org:MakarevichDmitry/homeworks.git /home/ec2-user/homeworks\", 
                             \"docker rm -f \$(docker ps -a -q)\", 
